@@ -1,4 +1,22 @@
-/* HEADER STRUCTURE */
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+/* HEADER */
 .header {
   width: 100%;
   height: 120px;
@@ -11,8 +29,6 @@
   top: 0;
   box-shadow: 0 6px 15px 0 hsla(0, 0%, 0%, 0.05);
   z-index: 100;
-  box-sizing: border-box;
-  flex-wrap: nowrap;
 }
 
 /* LOGO */
@@ -26,7 +42,6 @@
 
 .logo img {
   width: 7vw;
-  height: auto;
   min-width: 40px;
   max-width: 70px;
 }
@@ -35,7 +50,6 @@
   font-size: 24px;
   font-weight: 700;
   color: #21b491;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   white-space: nowrap;
 }
 
@@ -44,7 +58,6 @@
   display: flex;
   justify-content: space-between;
   width: 30%;
-  flex-wrap: nowrap;
   gap: 15px;
 }
 
@@ -53,10 +66,10 @@
   color: #413f3f;
   font-size: 22px;
   font-weight: 500;
-  transition: 0.5s ease-in-out;
   position: relative;
   padding: 0 10px;
-  white-space: nowrap;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
 }
 
 .links a:after {
@@ -74,29 +87,26 @@
   width: 100%;
 }
 
-/* SOCIAL ICONS CONTAINER */
-.try {
+/* SOCIAL ICONS */
+.social-container {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
-  flex-wrap: nowrap;
   flex-shrink: 0;
 }
 
-/* SOCIAL ICONS */
 .social {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 36px;
-  height: 36px;
+  width: 2.4rem;
+  height: 2.4rem;
   border-radius: 50%;
   color: white;
-  font-size: 16px;
-  animation: pulse 2s infinite ease-in-out;
+  font-size: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  animation: pulse 2s infinite ease-in-out;
 }
 
 .social:hover {
@@ -104,41 +114,59 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Background Colors */
-.social.facebook {
-  background-color: #1877F2;
-}
-
+.social.facebook { background-color: #1877F2; }
 .social.instagram {
-  background-color: #E1306C;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
 }
-
-.social.youtube {
-  background-color: #FF0000;
-}
+.social.youtube { background-color: #FF0000; }
 
 /* PULSE ANIMATION */
 @keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
 }
 
-/* MENU ICON - Hidden on desktop */
+/* MENU ICON */
 .menu {
   display: none;
   font-size: 28px;
-  cursor: pointer;
   color: #21b491;
-  user-select: none;
+  cursor: pointer;
+}
+
+/* ADMISSION BANNER */
+.admission-banner {
+  position: fixed;
+  top: 120px;
+  width: 100%;
+  height: 40px;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 99;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* DOWNLOAD ICON ANIMATION */
+.download-arrow {
+  animation: bounceUpDown 2s infinite ease-in-out;
+  color: #21b491;
+  margin-left: 10px;
+}
+
+@keyframes bounceUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 /* RESPONSIVE STYLES */
 
-/* Large tablets and smaller desktops */
+/* Tablets & Smaller Desktops */
 @media (max-width: 992px) {
   .header {
     padding: 15px 25px;
@@ -147,7 +175,6 @@
 
   .logo img {
     width: 10vw;
-    min-width: 40px;
     max-width: 60px;
   }
 
@@ -155,23 +182,22 @@
     font-size: 20px;
   }
 
-  .links a {
-    font-size: 18px;
-    padding: 0 8px;
-  }
-
-  .social {
-    width: 34px;
-    height: 34px;
-    font-size: 15px;
-  }
-
   .links {
     width: 40%;
   }
+
+  .links a {
+    font-size: 18px;
+  }
+
+  .social {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.9rem;
+  }
 }
 
-/* Tablets and mobile devices */
+/* Tablets & Phones */
 @media (max-width: 768px) {
   .links {
     display: none;
@@ -187,41 +213,40 @@
     position: absolute;
     top: 100px;
     right: 25px;
-    background-color: white;
+    background: white;
     padding: 20px;
+    width: 180px;
     box-shadow: 0 6px 15px hsla(0, 0%, 0%, 0.1);
     border-radius: 10px;
     z-index: 101;
-    width: 180px;
   }
 
   .links.open a {
-    padding: 12px 10px;
     font-size: 18px;
+    padding: 12px 10px;
     border-bottom: 1px solid #eee;
-    white-space: nowrap;
   }
 
   .links.open a:last-child {
     border-bottom: none;
   }
 
-  .try {
-    gap: 10px;
+  .social {
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 0.85rem;
   }
 
-  .social {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
+  .social-container {
+    gap: 8px;
   }
 }
 
-/* Small phones */
+/* Small Phones */
 @media (max-width: 480px) {
   .header {
-    padding: 12px 15px;
     height: 80px;
+    padding: 12px 15px;
   }
 
   .logo img {
@@ -239,9 +264,9 @@
   }
 
   .links.open {
-    width: 140px;
     top: 80px;
     right: 15px;
+    width: 140px;
   }
 
   .links.open a {
@@ -250,47 +275,13 @@
   }
 
   .social {
-    width: 30px;
-    height: 30px;
-    font-size: 13px;
+    width: 1.6rem;
+    height: 1.6rem;
+    font-size: 0.8rem;
   }
 
-  .try {
-    gap: 8px;
-  }
-}
-
-/* ADMISSION BANNER */
-.admission-banner {
-  position: fixed;
-  top: 120px;
-  width: 100%;
-  height: 40px;
-  background-color: #000;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 28px;
-  cursor: pointer;
-  user-select: none;
-  z-index: 99;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  text-decoration: none;
-}
-
-/* Download arrow animation */
-.download-arrow {
-  animation: bounceUpDown 2s infinite ease-in-out;
-  color: #21b491;
-}
-
-/* Bounce up and down */
-@keyframes bounceUpDown {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
+  .admission-banner {
+    top: 80px;
+    font-size: 20px;
   }
 }

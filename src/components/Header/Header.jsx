@@ -34,7 +34,7 @@ const Header = () => {
           <a onClick={() => handleLinkClick('footer')}>Contact</a>
         </div>
 
-        <div className="try">
+        <div className="social-container">
           <a href="https://www.facebook.com/profile.php?id=100066911379078" target="_blank" rel="noopener noreferrer" className="social facebook"><FaFacebookF /></a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social instagram"><FaInstagram /></a>
           <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social youtube"><FaYoutube /></a>
@@ -50,7 +50,7 @@ const Header = () => {
         className="admission-banner"
         aria-label="Download Admission Form"
       >
-        Admission Open 25-26 
+        Admission Open 25–26 
         <FaArrowDownLong className="download-arrow" />
       </a>
     </>

@@ -6,49 +6,61 @@ import card_icon4 from '../images/category-4.svg';
 import './Category.css';
 
 const Category = () => {
-    return (
-        <div className="container category">
-            <div className="head1">
-                <h5>Categories</h5>
-            </div>
-            <div className="head2">
-                <h2>Best Education <span>For Your</span> Child</h2>
-            </div>
-            <div className="cards">
-                <div className="card card1">
-                    <div className="icon icon1">
-                        <img src={card_icon1} alt="Play Group" />
-                    </div>
-                    <h3>Play Group</h3>
-                    <p>A warm and nurturing space where toddlers explore through play, music, and movement. We focus on social, emotional, and sensory development in a joyful environment.</p>
-                </div>
+  return (
+    <div className="category-container">
+      <div className="category-header">
+        <h5>Categories</h5>
+        <h2>
+          Best Education <span>For Your</span> Child
+        </h2>
+      </div>
 
-                <div className="card card2">
-                    <div className="icon icon2">
-                        <img src={card_icon2} alt="Nursery" />
-                    </div>
-                    <h3>Nursery</h3>
-                    <p>Helping young minds bloom through sensory play, colors, stories, and hands-on activities. A joyful start to structured learning in a loving space.</p>
-                </div>
-
-                <div className="card card3">
-                    <div className="icon icon3">
-                        <img src={card_icon3} alt="Jr KG" />
-                    </div>
-                    <h3>Jr KG</h3>
-                    <p>A playful and engaging start to early learning. Children build language, motor skills, and confidence through stories, games, and hands-on activities.</p>
-                </div>
-
-                <div className="card card4">
-                    <div className="icon icon4">
-                        <img src={card_icon4} alt="Sr KG" />
-                    </div>
-                    <h3>Sr KG</h3>
-                    <p>Preparing young learners for formal schooling with a balanced focus on academics, creativity, and independence. Building strong foundations in reading, writing, and math.</p>
-                </div>
+      <div className="category-cards">
+        {[
+          {
+            icon: card_icon1,
+            title: 'Play Group',
+            description:
+              'A warm and nurturing space where toddlers explore through play, music, and movement. We focus on social, emotional, and sensory development in a joyful environment.',
+            bgClass: 'card1',
+            iconClass: 'icon1',
+          },
+          {
+            icon: card_icon2,
+            title: 'Nursery',
+            description:
+              'Helping young minds bloom through sensory play, colors, stories, and hands-on activities. A joyful start to structured learning in a loving space.',
+            bgClass: 'card2',
+            iconClass: 'icon2',
+          },
+          {
+            icon: card_icon3,
+            title: 'Jr KG',
+            description:
+              'A playful and engaging start to early learning. Children build language, motor skills, and confidence through stories, games, and hands-on activities.',
+            bgClass: 'card3',
+            iconClass: 'icon3',
+          },
+          {
+            icon: card_icon4,
+            title: 'Sr KG',
+            description:
+              'Preparing young learners for formal schooling with a balanced focus on academics, creativity, and independence. Building strong foundations in reading, writing, and math.',
+            bgClass: 'card4',
+            iconClass: 'icon4',
+          },
+        ].map((card, idx) => (
+          <div className={`category-card ${card.bgClass}`} key={idx}>
+            <div className={`icon ${card.iconClass}`}>
+              <img src={card.icon} alt={card.title} />
             </div>
-        </div>
-    );
+            <h3>{card.title}</h3>
+            <p>{card.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Category;

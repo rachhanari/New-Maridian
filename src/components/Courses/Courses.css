@@ -2,131 +2,129 @@
   background-image: url('../images/hero-bg.svg');
   background-size: cover;
   background-repeat: no-repeat;
-  margin-bottom: 100px;
-  position: relative;
+  padding: 50px 20px;
 }
 
-.head2 {
-  margin-bottom: 50px;
+.head1 h5 {
+  font-size: 24px;
+  text-align: center;
+  color: #f54c65;
+  margin-bottom: 15px;
 }
 
 .head2 h2 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 42px;
+  text-align: center;
+  color: #222;
+  margin-bottom: 50px;
 }
 
-/* === Cards Container with horizontal scroll === */
-
-
-.cards::-webkit-scrollbar {
-  height: 8px;
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 80px;
 }
 
-.cards::-webkit-scrollbar-thumb {
-  background-color: rgba(26, 183, 157, 0.5);
-  border-radius: 10px;
-}
-
-/* === Card Styling with fixed small width === */
 .card {
-  min-width: 350px;
-  max-width: 250px;
-  flex: 0 0 auto;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 6px 15px 0 hsla(0, 0%, 0%, 0.05);
-  cursor: pointer;
+  flex: 1 1 280px;
+  max-width: 350px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 15px;
   padding-bottom: 20px;
-  text-align: start;
+  transition: transform 0.3s;
 }
 
-/* Image styling */
+.card:hover {
+  transform: translateY(-5px);
+}
+
 .image {
-  width: 100%;
   position: relative;
-  padding: 0;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
 }
 
 .image img {
   width: 100%;
-  height: 180px;
+  height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.4s ease-in-out;
 }
 
-.card img:hover {
-  transform: scale(1.09);
+.card:hover .image img {
+  transform: scale(1.08);
 }
 
-/* Duration badge */
 .duration {
   position: absolute;
   top: 15px;
   right: 15px;
-  padding: 5px 15px;
-  border-radius: 5px;
+  padding: 6px 12px;
   background-color: #f8b720;
   color: #fff;
+  border-radius: 6px;
   font-size: 14px;
 }
 
-/* Text paragraph */
+.para {
+  padding: 0 20px;
+  margin: 20px 0 10px;
+}
+
 .para h3 {
   font-size: 18px;
   font-weight: 400;
-  margin: 0 20px;
-  line-height: 1.2;
-  transition: color 0.2s ease-in-out;
+  line-height: 1.4;
+  color: #333;
 }
 
 .para h3:hover {
   color: #1AB79D;
 }
 
-/* Rating section */
 .rating {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 20px;
   font-size: 14px;
 }
 
 .stars {
-  color: gold;
+  color: #fbb034;
 }
 
-/* Footer */
 .footerCrad {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  color: gray;
   padding: 0 20px;
   font-size: 14px;
+  color: #777;
 }
 
-.footerCrad p,
-.footerCrad i {
-  margin: 0 10px;
+.footerCrad i, .footerCrad p {
+  margin-right: 8px;
 }
 
-/* === Gallery Styles (unchanged) === */
+/* === Gallery Section === */
 .gallery-wrapper {
-  padding: 0 50px;
-  margin-top: 80px;
-  margin-bottom: 100px;
+  padding: 0 20px;
+  margin-top: 60px;
 }
 
 .gallery-title {
   text-align: center;
-  font-size: 36px;
+  font-size: 32px;
+  color: #1AB79D;
   font-weight: 600;
   margin-bottom: 40px;
-  color: #1AB79D;
 }
 
 .gallery-grid-enhanced {
@@ -137,10 +135,10 @@
 
 .gallery-card {
   position: relative;
-  overflow: hidden;
   border-radius: 20px;
+  overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s;
 }
 
 .gallery-card img {
@@ -148,8 +146,7 @@
   height: 100%;
   max-height: 300px;
   object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s;
 }
 
 .gallery-card:hover img {
@@ -159,16 +156,41 @@
 .gallery-overlay {
   position: absolute;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
   width: 100%;
-  text-align: center;
-  padding: 15px;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 12px;
   color: #fff;
-  font-size: 18px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .gallery-card:hover .gallery-overlay {
   opacity: 1;
+}
+
+/* === Responsive Breakpoints === */
+@media (max-width: 1024px) {
+  .head2 h2 {
+    font-size: 36px;
+  }
+
+  .card {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .head2 h2 {
+    font-size: 28px;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .gallery-title {
+    font-size: 28px;
+  }
 }
