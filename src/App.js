@@ -8,6 +8,7 @@ import Header from './components/Header/Header'
 import Home from './components/Home/Home'
 import './MediaQuery.css'
 import Contact from './components/Contact/Contact'
+import AboutUs from './components/About/About'
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
     <div style={{overflow: 'hidden'}}>
       <Header />
       <Home/>
+      <AboutUs />
       <Category />
       <Courses />
       <Blogs />

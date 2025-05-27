@@ -27,7 +27,8 @@ const Header = () => {
 
         <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <a onClick={() => handleLinkClick('home')}>Home</a>
-          <a onClick={() => handleLinkClick('courses')}>Courses</a>
+          <a onClick={() => handleLinkClick('about')}>AboutUs</a>
+          <a onClick={() => handleLinkClick('courses')}>Gallery</a>
           <a onClick={() => handleLinkClick('blog')}>Blog</a>
           <a onClick={() => handleLinkClick('footer')}>Contact</a>
         </nav>

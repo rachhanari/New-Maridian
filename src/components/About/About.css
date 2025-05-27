@@ -1,0 +1,110 @@
+.about-us {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+  background: #f9f9f9;
+}
+
+.about-title {
+  text-align: center;
+  font-size: 36px;
+  color: #1AB79D;
+  margin-bottom: 20px;
+}
+
+.about-desc {
+  text-align: center;
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+}
+
+.about-stages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.stage-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+}
+
+.stage-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.stage-card h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.stage-card p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* === Trustee Section === */
+.trustee-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid #ddd;
+}
+
+.trustee-section h2 {
+  text-align: center;
+  font-size: 32px;
+  color: #1AB79D;
+  margin-bottom: 30px;
+}
+
+.trustee-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.trustee-img {
+  width: 280px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.trustee-text {
+  max-width: 800px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #444;
+  text-align: center;
+}
+
+.trustee-sign {
+  margin-top: 20px;
+  font-style: italic;
+  font-weight: 500;
+  color: #888;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .trustee-content {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .trustee-img {
+    margin-right: 30px;
+  }
+}
