@@ -45,7 +45,7 @@ const AboutUs = () => {
           <img src={trusteeImg} alt="Trustee" className="trustee-img" />
           <div className="trustee-text">
             <p>
-              As the trustee of <strong>Your School Name</strong>, I envision a place where every child is given the freedom to grow, explore, and shine. 
+              As the trustee of <strong>New Maridian School & Pragati Classes</strong>, I envision a place where every child is given the freedom to grow, explore, and shine. 
               Our school is built on the foundation of care, integrity, and excellence in education. 
               We aim to empower students not only academically, but also socially and emotionally — preparing them to thrive in every stage of life.
             </p>
