@@ -5,53 +5,47 @@ import { FaBars, FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaArrowDownLong } from "react-icons/fa6";
 
 const Header = () => {
-  const [menu, setMenu] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenu(!menu);
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  const handleLinkClick = (id) => {
+  const handleScroll = (id) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
-      setMenu(false); 
+      setMenuOpen(false);
     }
   };
 
   return (
     <>
-      <div className='header'>
+      <header className="header">
         <div className="logo">
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="New Maridian School" />
           <span>New Maridian School</span>
         </div>
 
-        <div className={`links ${menu ? 'open' : ''}`}>
-          <a onClick={() => handleLinkClick('home')}>Home</a>
-          <a onClick={() => handleLinkClick('courses')}>Courses</a>
-          <a onClick={() => handleLinkClick('blog')}>Blog</a>
-          <a onClick={() => handleLinkClick('footer')}>Contact</a>
-        </div>
+        <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
+          <a onClick={() => handleScroll('home')}>Home</a>
+          <a onClick={() => handleScroll('courses')}>Courses</a>
+          <a onClick={() => handleScroll('blog')}>Blog</a>
+          <a onClick={() => handleScroll('footer')}>Contact</a>
+        </nav>
 
-        <div className="social-container">
-          <a href="https://www.facebook.com/profile.php?id=100066911379078" target="_blank" rel="noopener noreferrer" className="social facebook"><FaFacebookF /></a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social instagram"><FaInstagram /></a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social youtube"><FaYoutube /></a>
-          <div className="menu" onClick={toggleMenu}>
+        <div className="right-section">
+          <div className="socials">
+            <a href="https://www.facebook.com/profile.php?id=100066911379078" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
+          </div>
+          <div className="menu-icon" onClick={toggleMenu}>
             <FaBars />
           </div>
         </div>
-      </div>
+      </header>
 
-      <a 
-        href="/admission-form.pdf" 
-        download 
-        className="admission-banner"
-        aria-label="Download Admission Form"
-      >
-        Admission Open 25–26 
-        <FaArrowDownLong className="download-arrow" />
+      <a href="/admission-form.pdf" download className="admission-banner">
+        Admission Open 25–26 <FaArrowDownLong className="download-arrow" />
       </a>
     </>
   );
