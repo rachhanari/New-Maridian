@@ -25,7 +25,6 @@ const Header = () => {
           <span>New Maridian School</span>
         </div>
 
-        {/* NAV LINKS */}
         <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <a onClick={() => handleLinkClick('home')}>Home</a>
           <a onClick={() => handleLinkClick('courses')}>Courses</a>
@@ -33,20 +32,17 @@ const Header = () => {
           <a onClick={() => handleLinkClick('footer')}>Contact</a>
         </nav>
 
-        {/* SOCIALS + MENU */}
         <div className="right-section">
           <a href="https://www.facebook.com/profile.php?id=100066911379078" target="_blank" rel="noreferrer" className="social facebook"><FaFacebookF /></a>
           <a href="https://instagram.com" target="_blank" rel="noreferrer" className="social instagram"><FaInstagram /></a>
           <a href="https://youtube.com" target="_blank" rel="noreferrer" className="social youtube"><FaYoutube /></a>
 
-          {/* Hamburger */}
           <div className="menu-icon" onClick={toggleMenu}>
             <FaBars />
           </div>
         </div>
       </header>
 
-      {/* ADMISSION BANNER */}
       <a
         href="/admission-form.pdf"
         download
