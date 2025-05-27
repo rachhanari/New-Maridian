@@ -1,0 +1,113 @@
+.blogs-section {
+  padding: 5rem 1rem;
+  background-color: #f9fafb;
+}
+
+.blogs-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1d4ed8;
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+
+/* Horizontal scrolling row */
+.blogs-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding: 0 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+.blogs-row::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.blog-card {
+  min-width: 300px;
+  max-width: 320px;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.blog-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 1.5rem;
+}
+
+.blog-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1d4ed8;
+  margin-bottom: 0.5rem;
+}
+
+.blog-description {
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+.blog-date {
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+/* Responsive Typography & Spacing */
+@media (max-width: 1024px) {
+  .blogs-heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .blog-content {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .blogs-heading {
+    font-size: 1.75rem;
+  }
+  .blog-card {
+    min-width: 260px;
+    max-width: 280px;
+  }
+  .blog-content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blogs-heading {
+    font-size: 1.5rem;
+  }
+  .blog-card {
+    min-width: 240px;
+    max-width: 260px;
+  }
+  .blog-image {
+    height: 160px;
+  }
+  .blog-title {
+    font-size: 1.1rem;
+  }
+  .blog-description {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,174 @@
+.courses {
+  background-image: url('../images/hero-bg.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.head2 {
+  margin-bottom: 50px;
+}
+
+.head2 h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* === Cards Container with horizontal scroll === */
+
+
+.cards::-webkit-scrollbar {
+  height: 8px;
+}
+
+.cards::-webkit-scrollbar-thumb {
+  background-color: rgba(26, 183, 157, 0.5);
+  border-radius: 10px;
+}
+
+/* === Card Styling with fixed small width === */
+.card {
+  min-width: 350px;
+  max-width: 250px;
+  flex: 0 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px 0 hsla(0, 0%, 0%, 0.05);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-bottom: 20px;
+  text-align: start;
+}
+
+/* Image styling */
+.image {
+  width: 100%;
+  position: relative;
+  padding: 0;
+}
+
+.image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card img:hover {
+  transform: scale(1.09);
+}
+
+/* Duration badge */
+.duration {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background-color: #f8b720;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Text paragraph */
+.para h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 20px;
+  line-height: 1.2;
+  transition: color 0.2s ease-in-out;
+}
+
+.para h3:hover {
+  color: #1AB79D;
+}
+
+/* Rating section */
+.rating {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+.stars {
+  color: gold;
+}
+
+/* Footer */
+.footerCrad {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: gray;
+  padding: 0 20px;
+  font-size: 14px;
+}
+
+.footerCrad p,
+.footerCrad i {
+  margin: 0 10px;
+}
+
+/* === Gallery Styles (unchanged) === */
+.gallery-wrapper {
+  padding: 0 50px;
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #1AB79D;
+}
+
+.gallery-grid-enhanced {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease-in-out;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  color: #fff;
+  font-size: 18px;
+}
+
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
+}
