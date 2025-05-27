@@ -9,11 +9,11 @@ const Header = () => {
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  const handleScroll = (id) => {
+  const handleLinkClick = (id) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
-      setMenuOpen(false);
+      setMenuOpen(false); // close menu on mobile
     }
   };
 
@@ -21,31 +21,40 @@ const Header = () => {
     <>
       <header className="header">
         <div className="logo">
-          <img src={logo} alt="New Maridian School" />
+          <img src={logo} alt="logo" />
           <span>New Maridian School</span>
         </div>
 
+        {/* NAV LINKS */}
         <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          <a onClick={() => handleScroll('home')}>Home</a>
-          <a onClick={() => handleScroll('courses')}>Courses</a>
-          <a onClick={() => handleScroll('blog')}>Blog</a>
-          <a onClick={() => handleScroll('footer')}>Contact</a>
+          <a onClick={() => handleLinkClick('home')}>Home</a>
+          <a onClick={() => handleLinkClick('courses')}>Courses</a>
+          <a onClick={() => handleLinkClick('blog')}>Blog</a>
+          <a onClick={() => handleLinkClick('footer')}>Contact</a>
         </nav>
 
+        {/* SOCIALS + MENU */}
         <div className="right-section">
-          <div className="socials">
-            <a href="https://www.facebook.com/profile.php?id=100066911379078" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
-          </div>
+          <a href="https://www.facebook.com/profile.php?id=100066911379078" target="_blank" rel="noreferrer" className="social facebook"><FaFacebookF /></a>
+          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="social instagram"><FaInstagram /></a>
+          <a href="https://youtube.com" target="_blank" rel="noreferrer" className="social youtube"><FaYoutube /></a>
+
+          {/* Hamburger */}
           <div className="menu-icon" onClick={toggleMenu}>
             <FaBars />
           </div>
         </div>
       </header>
 
-      <a href="/admission-form.pdf" download className="admission-banner">
-        Admission Open 25–26 <FaArrowDownLong className="download-arrow" />
+      {/* ADMISSION BANNER */}
+      <a
+        href="/admission-form.pdf"
+        download
+        className="admission-banner"
+        aria-label="Download Admission Form"
+      >
+        Admission Open 25–26
+        <FaArrowDownLong className="download-arrow" />
       </a>
     </>
   );

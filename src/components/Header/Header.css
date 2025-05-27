@@ -10,19 +10,25 @@ body {
   overflow-x: hidden;
 }
 
+img, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* HEADER BASE */
 .header {
-  position: fixed;
-  top: 0;
   width: 100%;
   height: 120px;
-  padding: 20px 40px;
   background: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
-  z-index: 1000;
+  padding: 0 40px;
 }
 
 /* LOGO */
@@ -34,76 +40,82 @@ body {
 
 .logo img {
   width: 60px;
-  height: auto;
+  min-width: 40px;
 }
 
 .logo span {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 700;
   color: #21b491;
-  white-space: nowrap;
 }
 
-/* NAVIGATION */
+/* NAV LINKS */
 .nav-links {
   display: flex;
-  gap: 25px;
+  gap: 30px;
 }
 
 .nav-links a {
-  font-size: 20px;
   text-decoration: none;
+  font-size: 20px;
   color: #333;
   position: relative;
-  padding: 5px;
   cursor: pointer;
 }
 
 .nav-links a::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -8px;
   left: 0;
-  width: 0%;
   height: 3px;
+  width: 0;
   background: #21b491;
-  transition: width 0.4s ease;
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover::after {
   width: 100%;
 }
 
-/* SOCIALS + MENU */
+/* RIGHT SECTION (SOCIALS + MENU) */
 .right-section {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.socials a {
-  color: white;
-  width: 2.4rem;
-  height: 2.4rem;
-  border-radius: 50%;
+/* SOCIAL ICONS */
+.social {
+  width: 2.2rem;
+  height: 2.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
+  color: white;
   font-size: 1rem;
-  transition: transform 0.3s;
+  cursor: pointer;
   animation: pulse 2s infinite ease-in-out;
+  transition: transform 0.3s;
 }
 
-.socials a:hover {
+.social:hover {
   transform: scale(1.15);
 }
 
-.socials a:nth-child(1) { background: #1877F2; }
-.socials a:nth-child(2) {
+.facebook { background: #1877F2; }
+.instagram {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
 }
-.socials a:nth-child(3) { background: #FF0000; }
+.youtube { background: #FF0000; }
 
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* MENU ICON */
 .menu-icon {
   display: none;
   font-size: 28px;
@@ -117,20 +129,20 @@ body {
   top: 120px;
   width: 100%;
   height: 40px;
-  background-color: #000;
+  background: #000;
   color: #fff;
+  font-size: 22px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 24px;
-  z-index: 999;
+  justify-content: center;
   text-decoration: none;
+  z-index: 999;
 }
 
 .download-arrow {
-  color: #21b491;
   margin-left: 10px;
   animation: bounce 2s infinite ease-in-out;
+  color: #21b491;
 }
 
 @keyframes bounce {
@@ -138,18 +150,11 @@ body {
   50% { transform: translateY(-8px); }
 }
 
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-}
-
-/* RESPONSIVE STYLES */
-
-/* Tablets */
+/* RESPONSIVE */
 @media (max-width: 992px) {
   .header {
-    padding: 15px 25px;
     height: 100px;
+    padding: 0 25px;
   }
 
   .logo span {
@@ -160,57 +165,50 @@ body {
     font-size: 18px;
   }
 
-  .admission-banner {
-    top: 100px;
-    font-size: 20px;
+  .social {
+    width: 2rem;
+    height: 2rem;
   }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    right: 25px;
+    background: white;
+    padding: 20px;
+    width: 180px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.open {
+    display: flex;
   }
 
   .menu-icon {
     display: block;
   }
 
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100px;
-    right: 20px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    z-index: 1010;
-  }
-
-  .nav-links.open a {
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-    font-size: 18px;
-  }
-
-  .nav-links.open a:last-child {
-    border-bottom: none;
-  }
-
-  .socials a {
-    width: 2rem;
-    height: 2rem;
+  .social {
+    width: 1.8rem;
+    height: 1.8rem;
     font-size: 0.9rem;
+  }
+
+  .admission-banner {
+    top: 100px;
+    font-size: 20px;
   }
 }
 
-/* Small Phones */
 @media (max-width: 480px) {
   .header {
     height: 80px;
-    padding: 12px 15px;
+    padding: 0 15px;
   }
 
   .logo img {
@@ -218,17 +216,17 @@ body {
   }
 
   .logo span {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .menu-icon {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   .nav-links.open {
     top: 80px;
     right: 15px;
-    width: 160px;
+    width: 150px;
   }
 
   .admission-banner {
