@@ -26,7 +26,7 @@ const Footer = () => {
         {/* Column 3: Contact Info */}
         <div className="footer-column">
           <h4>Contact</h4>
-          <p>📍 Vemul Building, opp, Balaji Mandir Rd, Dhamankar Naka, Padma Nagar, Bhiwandi, Maharashtra 421302</p>
+          <p>📍 Konda building , opp, Balaji Mandir Rd, Dhamankar Naka, Padma Nagar, Bhiwandi, Maharashtra 421302</p>
           <p>📞 +91 7499803369</p>
           <p>📧 info@newmeridianschool.org</p>
         </div>

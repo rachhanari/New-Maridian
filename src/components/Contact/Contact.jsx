@@ -24,7 +24,7 @@ const Contact = () => {
             <div className="info-item">
               <span>📍 <strong>ADDRESS:</strong></span>
               <p>New Meridian School & Pragati classes<br />
-              Vemul Building, opp, Balaji Mandir Rd, Dhamankar Naka, Padma Nagar, Bhiwandi, Maharashtra 421302</p>
+              Konda building, opp, Balaji Mandir Rd, Dhamankar Naka, Padma Nagar, Bhiwandi, Maharashtra 421302</p>
             </div>
             <div className="info-item">
               <span>📧 <strong>EMAIL:</strong></span>
