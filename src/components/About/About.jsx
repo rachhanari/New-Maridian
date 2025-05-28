@@ -11,7 +11,7 @@ const AboutUs = () => {
     <div className="about-us">
       <h2 className="about-title">About Our School</h2>
       <p className="about-desc">
-        Welcome to <strong>New Maridian School </strong>, where young minds take their first steps into a lifetime of learning. 
+        Welcome to <strong>New Meridian School </strong>, where young minds take their first steps into a lifetime of learning. 
         We provide a nurturing, stimulating environment designed to foster curiosity, creativity, and confidence. 
         Our curriculum is thoughtfully designed across four key stages of early education.
       </p>
@@ -45,7 +45,7 @@ const AboutUs = () => {
           <img src={trusteeImg} alt="Trustee" className="trustee-img" />
           <div className="trustee-text">
             <p>
-              As the trustee of <strong>New Maridian School & Pragati Classes</strong>, I envision a place where every child is given the freedom to grow, explore, and shine. 
+              As the trustee of <strong>New Meridian School & Pragati Classes</strong>, I envision a place where every child is given the freedom to grow, explore, and shine. 
               Our school is built on the foundation of care, integrity, and excellence in education. 
               We aim to empower students not only academically, but also socially and emotionally — preparing them to thrive in every stage of life.
             </p>

@@ -28,12 +28,16 @@
 }
 
 .heading span {
-  color: #d44776;
+  background: linear-gradient(90deg, #900000, #900000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); */
 }
 
 .paragraph {
   padding: 20px 0px;
-  color: #413f3f;
+  color: #ffff00;
   line-height: 50px;
 }
 

@@ -22,7 +22,7 @@ const Header = () => {
       <header className="header">
         <div className="logo">
           <img src={logo} alt="logo" />
-          <span>New Maridian School</span>
+          <span>New Meridian School</span>
         </div>
 
         <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>

@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-container">
         {/* Column 1: School Info */}
         <div className="footer-column">
-          <h3>NEW MARIDIAN SCHOOL</h3>
+          <h3>NEW MERIDIAN SCHOOL</h3>
           <p>Empowering young minds through quality education and a nurturing environment.</p>
         </div>
 
@@ -26,9 +26,9 @@ const Footer = () => {
         {/* Column 3: Contact Info */}
         <div className="footer-column">
           <h4>Contact</h4>
-          <p>📍 123 Learning Lane, Education City</p>
-          <p>📞 +91 98765 43210</p>
-          <p>📧 info@newmaridian.edu</p>
+          <p>📍 Vemul Building, opp, Balaji Mandir Rd, Dhamankar Naka, Padma Nagar, Bhiwandi, Maharashtra 421302</p>
+          <p>📞 +91 7499803369</p>
+          <p>📧 info@newmeridianschool.org</p>
         </div>
 
         {/* Column 4: Social Links */}
@@ -44,7 +44,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} NEW MARIDIAN SCHOOL. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} NEW MERIDIAN SCHOOL. All rights reserved.</p>
       </div>
     </footer>
   );
